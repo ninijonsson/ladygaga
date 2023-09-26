@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: "bungee-shade";
+    src: url("fonts/bungee_shade/BungeeShade-Regular.ttf");
+}
+
+@font-face {
+    font-family: "bungee-outline";
+    src: url("fonts/bungee_outline/BungeeOutline-Regular.ttf");
+}
+
+@font-face {
+    font-family: "barlow-semi-condensed";
+    src: url("fonts/barlow_semi_condensed/BarlowSemiCondensed-Medium.ttf");
+}
+
+@font-face {
+    font-family: "barlow-condensed";
+    src: url("fonts/barlow_condensed/BarlowCondensed-Medium.ttf");
+}
+
+body {
+    margin-top: 100px;
+    height: 100vh;
+    min-width: 800px;
+
+    background-image: url("images/background.jpeg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: "barlow-semi-condensed";
+    color: rgb(208, 208, 208);
+
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: rgba(32, 32, 32, 0.6);
+    border-radius: 20px;
+    width: 70vw;
+    padding: 40px;
+}
+
+/* Header, title */
+
+header {
+    font-size: 80px;
+    font-family: "bungee-shade";
+}
+
+/* Navigation */
+
+ul {
+    margin: 40px 0;
+    padding-left: 0px;
+
+    display: flex;
+    gap: 20px;
+}
+
+ul li {
+    text-align: center;
+    font-size: 28px;
+    list-style: none;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(26, 26, 26);
+
+    padding: 20px;
+    border-radius: 10px;
+
+    flex-grow: 1;
+    /* Få knapparna bli lika långa */
+}
+
+ul li:hover {
+    background-color: rgba(00, 00, 00, 0.3);
+    color: #faebd7;
+}
+
+/* CD */
+
+main div {
+    background-color: rgba(3, 3, 3, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin-bottom: 30px;
+
+    display: grid;
+
+}
+
+div h2 {
+    font-family: "bungee-outline";
+}
+
+div h3 {
+    font-family: "barlow-condensed";
+}
+
+div ol li {
+    list-style: none;
+}
+
+/* Första CD:n */
