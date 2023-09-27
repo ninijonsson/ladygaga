@@ -94,9 +94,13 @@ main div {
     border-radius: 20px;
     border: 1px solid white;
     margin-bottom: 30px;
+}
 
-    display: grid;
-
+img {
+    border-radius: 20px;
+    justify-self: end;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 div h2 {
@@ -107,8 +111,19 @@ div h3 {
     font-family: "barlow-condensed";
 }
 
-div ol li {
+div ol {
     list-style: none;
 }
 
 /* Första CD:n */
+
+.first {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 60px 20px 180px;
+}
+
+.first p,
+.first ol {
+    grid-column: 1;
+}
