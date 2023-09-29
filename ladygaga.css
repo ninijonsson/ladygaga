@@ -93,9 +93,17 @@ ul li {
     /* Få knapparna bli lika långa */
 }
 
-ul li:hover {
+/* Försök fixa på ett snyggare sätt */
+ul li:nth-child(odd):hover {
     background-color: rgba(00, 00, 00, 0.3);
     color: #faebd7;
+    cursor: pointer;
+}
+
+ul li:nth-child(4):hover {
+    background-color: rgba(00, 00, 00, 0.3);
+    color: #faebd7;
+    cursor: pointer;
 }
 
 /* CD */
@@ -139,8 +147,8 @@ div ol li {
     grid-template-rows: 30px 60px 20px 180px 160px 190px 160px;
 }
 
-.first .text p,
-.first .text ol {
+.first p,
+.first ol {
     grid-column: 1;
 }
 
@@ -153,6 +161,8 @@ div ol li {
     grid-row: 6;
     grid-column: 2;
     margin: 5px;
+    margin-bottom: 12px;
+    padding: 20px;
 }
 
 .playlist ol {
@@ -168,6 +178,8 @@ div ol li {
     grid-column: 3;
     border-radius: 0 0 20px 0;
 }
+
+/* Längst ner av första CD:n */
 
 .bottom {
     grid-row: 7;
