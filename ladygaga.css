@@ -124,7 +124,7 @@ div h3 {
     font-family: "barlow-condensed";
 }
 
-div ol {
+div ol li {
     list-style: none;
 }
 
@@ -139,4 +139,29 @@ div ol {
 .first p,
 .first ol {
     grid-column: 1;
+}
+
+.first .playlist {
+    background-color: #323232;
+    border: 0;
+
+    border-radius: 0 0 0px 20px;
+
+    grid-row: 6;
+    grid-column: 2;
+    margin: 5px;
+}
+
+.playlist ol {
+    padding-left: 15px;
+}
+
+.playlist li {
+    list-style: decimal;
+    text-align: left;
+}
+
+.playlist:nth-of-type(2) {
+    grid-column: 3;
+    border-radius: 0 0 20px 0;
 }
