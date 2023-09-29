@@ -52,6 +52,7 @@ body {
     border-radius: 20px;
     width: 70vw;
     padding: 40px;
+    height: 1380px;
 }
 
 /* Header, title */
@@ -99,7 +100,8 @@ ul li:hover {
 
 /* CD */
 
-main div {
+main .first,
+main .second {
     background-color: rgba(3, 3, 3, 0.6);
     padding: 20px;
     border-radius: 20px;
@@ -130,14 +132,15 @@ div ol li {
 
 /* Första CD:n */
 
+/* "Main" grid */
 .first {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 30px 60px 20px 180px 160px 200px;
+    grid-template-rows: 30px 60px 20px 180px 160px 190px 160px;
 }
 
-.first p,
-.first ol {
+.first .text p,
+.first .text ol {
     grid-column: 1;
 }
 
@@ -164,4 +167,65 @@ div ol li {
 .playlist:nth-of-type(2) {
     grid-column: 3;
     border-radius: 0 0 20px 0;
+}
+
+.bottom {
+    grid-row: 7;
+    grid-column: 1 / span 3;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 160px;
+    gap: 5px;
+}
+
+/* All bottom ska få en vit box och grå textfärg */
+.bottom p {
+    background-color: white;
+    color: #323232;
+    padding: 10px;
+
+    display: flex;
+    /* För att centrera texten */
+    align-items: center;
+}
+
+/* Specifierar cellernas/områdenas positioner samt kanterna */
+
+.bottom p:nth-of-type(1) {
+    grid-column: 1 / 1;
+    border-radius: 20px 0 20px 20px;
+}
+
+.bottom p:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    border-radius: 20px 20px 20px 0;
+
+}
+
+.bottom img {
+    grid-column: 5;
+    object-fit: cover;
+    object-position: top;
+
+    height: 100%;
+    /* Annars sticker bilden ut från gridden */
+
+    display: flex;
+    /* Vi vill ha texten inne i bilden */
+    align-items: flex-end;
+}
+
+.bottom p:nth-of-type(3) {
+    grid-column: 6;
+    border-radius: 20px 20px 0 20px;
+
+}
+
+/* Footer */
+
+footer {
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
 }
