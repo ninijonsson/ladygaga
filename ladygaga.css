@@ -25,6 +25,11 @@
     src: url("fonts/barlow_condensed/BarlowCondensed-Medium.ttf");
 }
 
+@font-face {
+    font-family: "barlow-bold-condensed";
+    src: url("fonts/barlow_condensed/BarlowCondensed-Bold.ttf");
+}
+
 body {
     margin-top: 100px;
     height: 100vh;
@@ -57,6 +62,12 @@ header {
 }
 
 /* Navigation */
+
+nav li:nth-child(2) {
+    font-family: "barlow-bold-condensed";
+    border: 1px solid white;
+    box-shadow: 0 0 10px white;
+}
 
 ul {
     margin: 40px 0;
@@ -99,8 +110,10 @@ main div {
 img {
     border-radius: 20px;
     justify-self: end;
-    grid-column: 2;
+    grid-column: 2 / span 2;
     grid-row: 1;
+
+    width: 100%;
 }
 
 div h2 {
@@ -119,8 +132,8 @@ div ol {
 
 .first {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px 60px 20px 180px;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 30px 60px 20px 180px 160px 200px;
 }
 
 .first p,
