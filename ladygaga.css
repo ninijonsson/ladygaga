@@ -3,8 +3,7 @@
     margin: 0;
 }
 
-/* Fonts */
-
+/* Fonts vi skapar */
 @font-face {
     font-family: "bungee-shade";
     src: url("fonts/bungee_shade/BungeeShade-Regular.ttf");
@@ -33,14 +32,19 @@
 body {
     /* Egna skapade properties */
     --space: 20px;
+    --double_space: calc(2*var(--space));
+    --border-radius: 20px;
 
+    /* Storlekar, mått */
     margin-top: 100px;
     height: 100vh;
     min-width: 800px;
 
+    /* Bakgrundsbilden */
     background-image: url("images/background.jpeg");
     background-position: center;
     background-attachment: fixed;
+    /* Bakgrundsbilden stannar, kan ej skrolla */
     background-size: cover;
 
     font-family: "barlow-semi-condensed";
@@ -50,35 +54,35 @@ body {
     justify-content: center;
 }
 
+/* "Boxen" med allt innehåll */
 .wrapper {
     background-color: rgba(32, 32, 32, 0.6);
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 70vw;
-    padding: 40px;
+    padding: var(--double_space);
     height: 1380px;
 }
 
-/* Header, title */
-
+/* Header, titel */
 header {
     font-size: 80px;
     font-family: "bungee-shade";
 }
 
 /* Navigation */
-
 nav li:nth-child(2) {
     font-family: "barlow-bold-condensed";
     border: 1px solid white;
     box-shadow: 0 0 10px white;
 }
 
+/* Knappar till navigationen */
 ul {
-    margin: 40px 0;
+    margin: var(--double_space) 0;
     padding-left: 0px;
 
     display: flex;
-    gap: 20px;
+    gap: var(--space);
 }
 
 ul li {
@@ -89,11 +93,12 @@ ul li {
     background-color: rgba(255, 255, 255, 0.5);
     color: rgb(26, 26, 26);
 
-    padding: 20px;
-    border-radius: 10px;
+    padding: var(--space);
+    border-radius: var(--border-radius);
 
+    /* Får knapparna att bli lika långa */
     flex-grow: 1;
-    /* Få knapparna bli lika långa */
+    flex-basis: 0;
 }
 
 /* Försök fixa på ett snyggare sätt */
@@ -109,37 +114,45 @@ ul li:nth-child(4):hover {
     cursor: pointer;
 }
 
-/* CD */
-
-main .first,
-main .second {
+/* "Boxarna" för info om CD-skivorna */
+main .box {
     background-color: rgba(3, 3, 3, 0.6);
-    padding: 20px;
-    border-radius: 20px;
+    padding: var(--space);
+    border-radius: var(--border-radius);
     border: 1px solid white;
-    margin-bottom: 30px;
+    margin-bottom: calc(1.5*var(--space));
 }
 
+/* Boxarna med bilder, text o.s.v. */
+.box:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 30px 60px 20px 180px 160px 190px 160px;
+}
+
+.box p,
+.box ol {
+    grid-column: 1;
+}
+
+/* Stora bilden på CD-omslagen */
 img {
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     justify-self: end;
     grid-column: 2 / span 2;
     grid-row: 1;
 
     width: 100%;
+
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* .first_album {
-    background-image: url("images/the_fame_monster.png");
-
-    transition-property: background-image;
-    transition-duration: 2s;
+/* Endast de stora bilderna på CD-omslaget skall få en transition */
+img:nth-of-type(2):hover {
+    opacity: 0;
 }
 
-.first_album:hover {
-    background-image: url("images/alt_the_fame_monster.png");
-} */
-
+/* Underrubriker och text */
 div h2 {
     font-family: "bungee-outline";
 }
@@ -152,50 +165,38 @@ div ol li {
     list-style: none;
 }
 
-/* Första CD:n */
-
-/* "Main" grid */
-.first {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 30px 60px 20px 180px 160px 190px 160px;
-}
-
-.first p,
-.first ol {
-    grid-column: 1;
-}
-
-.first .playlist {
+/* Text med tracks (side one & two) */
+.box .playlist {
     background-color: #323232;
     border: 0;
 
-    border-radius: 0 0 0px 20px;
+    border-radius: 0 0 0 20px;
 
     grid-row: 6;
     grid-column: 2;
-    margin: 5px;
-    margin-bottom: 12px;
-    padding: 20px;
+    margin: 5px 5px 10px 5px;
+    padding: var(--space);
 }
 
 .playlist ol {
-    padding-left: 15px;
+    padding-left: var(--space);
 }
 
 .playlist li {
+    /* Eftersom vi tog bort list-style innan lägger vi till det igen */
     list-style: decimal;
-    text-align: left;
 }
 
+/* Använder sig av samma klass--måste flytta på den andra eftersom den är förinställd
+   på "grid-column: 2" i classen */
 .playlist:nth-of-type(2) {
     grid-column: 3;
-    border-radius: 0 0 20px 0;
+    border-radius: 0 0 var(--space) 0;
 }
 
-/* Längst ner av första CD:n */
-
-.bottom {
+/* Längst ner i vår grid/box om CD-skivorna,
+   här finns texter + bild */
+.bottom_text {
     grid-row: 7;
     grid-column: 1 / span 3;
 
@@ -205,53 +206,57 @@ div ol li {
     gap: 5px;
 }
 
-/* All bottom ska få en vit box och grå textfärg */
-.bottom p {
+/* All bottom_text ska få en vit box och grå textfärg */
+.bottom_text p {
     background-color: white;
     color: #323232;
-    padding: 10px;
+    padding: calc(0.5*var(--space));
 
+    /* För att centrera texten gör vi det till en flex + align-items */
     display: flex;
-    /* För att centrera texten */
     align-items: center;
 }
 
-/* Specifierar cellernas/områdenas positioner samt kanterna */
-
-.bottom p:nth-of-type(1) {
+/* Positionerar cellerna/områdena samt kanterna */
+/* Första cellen med text */
+.bottom_text p:nth-of-type(1) {
     grid-column: 1 / 1;
-    border-radius: 20px 0 20px 20px;
+    border-radius: var(--space) 0 var(--space) var(--space);
 }
 
-.bottom p:nth-of-type(2) {
+/* Andra området med text */
+.bottom_text p:nth-of-type(2) {
     grid-column: 3 / span 2;
-    border-radius: 20px 20px 20px 0;
+    border-radius: var(--space) var(--space) var(--space) 0;
 
 }
 
-.bottom img {
+/* Tredje cellen med bild*/
+.bottom_text img {
     grid-column: 5;
     object-fit: cover;
     object-position: top;
 
-    height: 100%;
     /* Annars sticker bilden ut från gridden */
+    height: 100%;
 
+    /* Vi vill ha texten inne i bilden (INTE FIXAD!) */
     display: flex;
-    /* Vi vill ha texten inne i bilden */
     align-items: flex-end;
 }
 
-.bottom p:nth-of-type(3) {
+/* Fjärde cellen med text */
+.bottom_text p:nth-of-type(3) {
     grid-column: 6;
     border-radius: 20px 20px 0 20px;
 
 }
 
 /* Footer */
-
 footer {
     height: 70px;
     display: flex;
     align-items: flex-end;
 }
+
+@media (max-width: 500px) {}
