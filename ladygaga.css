@@ -31,6 +31,9 @@
 }
 
 body {
+    /* Egna skapade properties */
+    --space: 20px;
+
     margin-top: 100px;
     height: 100vh;
     min-width: 800px;
@@ -125,6 +128,17 @@ img {
 
     width: 100%;
 }
+
+/* .first_album {
+    background-image: url("images/the_fame_monster.png");
+
+    transition-property: background-image;
+    transition-duration: 2s;
+}
+
+.first_album:hover {
+    background-image: url("images/alt_the_fame_monster.png");
+} */
 
 div h2 {
     font-family: "bungee-outline";
