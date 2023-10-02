@@ -1,0 +1,9 @@
+/* Mobilversion */
+@media (max-width: 500px) {
+    body {
+        background-image: url("images/mobile/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}

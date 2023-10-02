@@ -31,7 +31,7 @@
 
 body {
     /* Egna skapade properties */
-    --space: 20px;
+    --space: 1.5vw;
     --double_space: calc(2*var(--space));
     --border-radius: 20px;
 
@@ -61,7 +61,7 @@ body {
     width: 70vw;
     padding: var(--double_space);
     /* Längden på wrappern */
-    height: 2150px;
+    height: 2400px;
 }
 
 /* Header, titel */
@@ -129,20 +129,32 @@ main .box {
 .box:nth-of-type(2) {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 40px 80px 20px 180px 130px 190px 160px;
+    /* grid-template-rows: 40px 80px 20px 180px 130px 190px 160px; */
+    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.06fr 0.22fr 0.15fr;
 }
 
 .box p,
 .box ol {
     grid-column: 1;
+    font-size: 1vw;
+}
+
+.image {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 /* Stora bilden på CD-omslagen */
 img {
     border-radius: var(--border-radius);
     justify-self: end;
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 1;
+    margin-bottom: calc(0.5*var(--space));
 
     width: 100%;
 
@@ -159,12 +171,12 @@ img:nth-of-type(2):hover {
 /* Underrubriker och text */
 div h2 {
     font-family: "bungee-outline";
-    font-size: 32px;
+    font-size: 2.4vw;
 }
 
 div h3 {
     font-family: "barlow-condensed";
-    font-size: 26px;
+    font-size: 2vw;
 }
 
 div ol li {
@@ -179,7 +191,8 @@ div ol li {
     border-radius: 0 0 0 20px;
 
     grid-row: 6;
-    grid-column: 2;
+    grid-column: 1;
+
     margin: 0 5px 10px 5px;
     padding: var(--space);
 }
@@ -201,7 +214,7 @@ div ol li {
 /* Använder sig av samma klass--måste flytta på den andra eftersom den är förinställd
    på "grid-column: 2" i classen */
 .playlist:nth-of-type(2) {
-    grid-column: 3;
+    grid-column: 2;
     border-radius: 0 0 var(--space) 0;
 }
 
@@ -213,7 +226,7 @@ div ol li {
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 160px;
+    grid-template-rows: 0.9fr;
     gap: 5px;
 }
 
@@ -256,8 +269,23 @@ div ol li {
     align-items: flex-end;
 }
 
-/* CD 1 - Fjärde cellen med text */
+/* Texten på bilden på Lady Gaga */
 .bottom_text p:nth-of-type(3) {
+    z-index: 1;
+
+    color: white;
+    background-color: transparent;
+    text-shadow: 2px 2px 3px black;
+
+    align-self: end;
+
+    grid-column: 5;
+    grid-row: 1;
+
+}
+
+/* CD 1 - Fjärde cellen med text */
+.bottom_text p:nth-of-type(4) {
     grid-column: 6;
     border-radius: 20px 20px 0 20px;
 
@@ -292,6 +320,24 @@ div ol li {
     align-items: flex-end;
 }
 
+.box:nth-of-type(2) .bottom_text p:nth-of-type(3) {
+    z-index: 1;
+
+    color: white;
+    background-color: transparent;
+    text-shadow: 2px 2px 3px black;
+
+    align-self: end;
+
+    grid-column: 4;
+    grid-row: 1;
+
+}
+
+.box:nth-of-type(2) .bottom_text {
+    margin-top: var(--space);
+}
+
 /* Footer */
 footer {
     height: 95px;
@@ -299,5 +345,38 @@ footer {
     align-items: flex-end;
 }
 
-/* Mobilversion */
-@media (max-width: 500px) {}
+/* Mellan 800px och 900px ska typsnittet inte växa */
+@media (min-width: 800px) and (max-width: 900px) {
+
+    /* Justera typsnittsstorlek */
+    div h2 {
+        font-size: 21px;
+    }
+
+    div h3 {
+        font-size: 16px;
+    }
+
+    .box p,
+    .box ol {
+        font-size: 12px;
+    }
+}
+
+/* Här ska typsnittet växa, mellan 900px och 1200px */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+    /* Justera typsnittsstorlek */
+    div h2 {
+        font-size: 2.3vw;
+    }
+
+    div h3 {
+        font-size: 1.8vw;
+    }
+
+    .box p,
+    .box ol {
+        font-size: 12px;
+    }
+}
