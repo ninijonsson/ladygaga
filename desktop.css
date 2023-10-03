@@ -37,8 +37,8 @@ body {
 
     /* Storlekar, mått */
     margin-top: 100px;
-    height: 100vh;
-    min-width: 800px;
+    min-height: 100vh;
+    /* min-width: 800px; */
 
     /* Bakgrundsbilden */
     background-image: url("images/background.jpg");
@@ -61,7 +61,7 @@ body {
     width: 70vw;
     padding: var(--double_space);
     /* Längden på wrappern */
-    height: 2400px;
+    height: 2100px;
 }
 
 /* Header, titel */
@@ -188,7 +188,7 @@ div ol li {
     background-color: #323232;
     border: 0;
 
-    border-radius: 0 0 0 20px;
+    border-radius: 0 0 0 var(--border-radius);
 
     grid-row: 6;
     grid-column: 1;
@@ -215,7 +215,7 @@ div ol li {
    på "grid-column: 2" i classen */
 .playlist:nth-of-type(2) {
     grid-column: 2;
-    border-radius: 0 0 var(--space) 0;
+    border-radius: 0 0 var(--border-radius) 0;
 }
 
 /* Längst ner i vår grid/box om CD-skivorna,
@@ -340,13 +340,16 @@ div ol li {
 
 /* Footer */
 footer {
-    height: 95px;
-    display: flex;
     align-items: flex-end;
 }
 
 /* Mellan 800px och 900px ska typsnittet inte växa */
 @media (min-width: 800px) and (max-width: 900px) {
+
+    .wrapper {
+        width: 93vw;
+        height: 270vh;
+    }
 
     /* Justera typsnittsstorlek */
     div h2 {
@@ -366,17 +369,54 @@ footer {
 /* Här ska typsnittet växa, mellan 900px och 1200px */
 @media (min-width: 900px) and (max-width: 1200px) {
 
+    /* Wrappern bevarar sin storlek */
+    .wrapper {
+        width: 830px;
+        height: 1850px;
+    }
+
     /* Justera typsnittsstorlek */
     div h2 {
-        font-size: 2.3vw;
+        font-size: 2.4vw;
     }
 
     div h3 {
-        font-size: 1.8vw;
+        font-size: 2vw;
     }
 
     .box p,
     .box ol {
+        font-size: 12px;
+    }
+}
+
+/* Mobilversion */
+@media (max-width: 500px) {
+    body {
+        margin: 0;
+
+        background-image: url("images/mobile/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+        width: 500px;
+    }
+
+    .wrapper {
+        width: 94vw;
+        height: 3000px;
+    }
+
+    .wrapper .box {
+        width: 90vw;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    nav li {
         font-size: 12px;
     }
 }
