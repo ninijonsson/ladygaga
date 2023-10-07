@@ -35,10 +35,7 @@ body {
     --double_space: calc(2*var(--space));
     --border-radius: 20px;
 
-    /* Storlekar, mått */
     margin-top: 100px;
-    min-height: 100vh;
-    /* min-width: 800px; */
 
     /* Bakgrundsbilden */
     background-image: url("images/background.jpg");
@@ -50,18 +47,20 @@ body {
     font-family: "barlow-semi-condensed";
     color: rgb(208, 208, 208);
 
+    /* Skapa flex på body för att kunna centrera vår wrapper */
     display: flex;
     justify-content: center;
 }
 
-/* "Boxen" med allt innehåll */
+/* "Boxen" med allt innehåll, från header till footer */
 .wrapper {
     background-color: rgba(32, 32, 32, 0.6);
     border-radius: var(--border-radius);
     width: 70vw;
     padding: var(--double_space);
+
     /* Längden på wrappern */
-    height: 2100px;
+    height: 100%;
 }
 
 /* Header, titel */
@@ -71,7 +70,7 @@ header {
 }
 
 /* Navigation */
-nav li:nth-child(2) {
+nav a:nth-child(2) {
     font-family: "barlow-bold-condensed";
     border: 1px solid #ffffff;
     box-shadow: 0 0 10px #ffffff;
@@ -86,10 +85,11 @@ ul {
     gap: var(--space);
 }
 
-ul li {
+ul a {
     text-align: center;
     font-size: 28px;
     list-style: none;
+    text-decoration: none;
 
     background-color: rgba(255, 255, 255, 0.5);
     color: rgb(26, 26, 26);
@@ -103,13 +103,13 @@ ul li {
 }
 
 /* Försök fixa på ett snyggare sätt */
-ul li:nth-child(odd):hover {
+ul a:nth-child(odd):hover {
     background-color: rgba(00, 00, 00, 0.3);
     color: #faebd7;
     cursor: pointer;
 }
 
-ul li:nth-child(4):hover {
+ul a:nth-child(4):hover {
     background-color: rgba(00, 00, 00, 0.3);
     color: #faebd7;
     cursor: pointer;
@@ -221,6 +221,8 @@ div ol li {
 /* Längst ner i vår grid/box om CD-skivorna,
    här finns texter + bild */
 .bottom_text {
+    margin-top: var(--space);
+
     grid-row: 7;
     grid-column: 1 / span 3;
 
@@ -334,13 +336,10 @@ div ol li {
 
 }
 
-.box:nth-of-type(2) .bottom_text {
-    margin-top: var(--space);
-}
-
 /* Footer */
 footer {
     align-items: flex-end;
+    position: absolute;
 }
 
 /* Mellan 800px och 900px ska typsnittet inte växa */
@@ -348,7 +347,6 @@ footer {
 
     .wrapper {
         width: 93vw;
-        height: 270vh;
     }
 
     /* Justera typsnittsstorlek */
@@ -372,7 +370,6 @@ footer {
     /* Wrappern bevarar sin storlek */
     .wrapper {
         width: 830px;
-        height: 1850px;
     }
 
     /* Justera typsnittsstorlek */
@@ -405,7 +402,6 @@ footer {
 
     .wrapper {
         width: 94vw;
-        height: 3000px;
     }
 
     .wrapper .box {

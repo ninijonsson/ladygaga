@@ -24,7 +24,7 @@
         padding: 15px;
 
         /* Gör om gridden för mobilversionen */
-        grid-template-rows: 0.04fr 0.01fr 0.15fr 0.03fr 0.3fr 0.22fr 0.15fr;
+        grid-template-rows: 0.04fr 0.01fr 0.15fr 0.03fr 0.4fr 0.3fr 0.15fr;
     }
 
     .bottom_text {
@@ -102,20 +102,20 @@
         grid-column: 1 / span 3;
         grid-row: 1;
 
-        grid-template-rows: 2fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     .box .playlist {
         grid-column: 1;
         grid-row: 2;
 
-        font-size: var(--font-size);
+        font-size: 4.5vw;
         padding: 25px;
         margin-top: 3px;
     }
 
     .playlist li {
-        font-size: calc(0.6*var(--font-size));
+        font-size: 15px;
     }
 
     .playlist:nth-of-type(2) {
@@ -141,6 +141,6 @@
     }
 
     footer {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
