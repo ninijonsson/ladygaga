@@ -18,7 +18,7 @@
     }
 
     .wrapper .box {
-        width: 90vw;
+        width: 93vw;
         padding: 15px;
 
         /* Gör om gridden för mobilversionen */
@@ -142,5 +142,6 @@
     footer {
         font-size: 14px;
         padding-bottom: 10px;
+        padding-top: 50px;
     }
 }

@@ -4,23 +4,28 @@
         background-image: none;
         /* Ingen bakgrundsbild på tablet-versionen */
         background-color: #b6b6b6;
+
+        margin-top: 35px;
     }
 
     header {
         text-align: center;
-        font-size: 62px;
+        font-size: 78px;
     }
 
     body .wrapper {
         width: 90vw;
     }
 
-    nav a {
-        border-radius: 10px;
+    ul {
+        gap: 5px;
     }
 
-    nav ul li {
-        font-size: 16px;
+    nav a {
+        border-radius: 10px;
+        font-size: 22px;
+        margin: 30px 0;
+        padding: 15px 0;
     }
 
     /* Justera grid-raderna */
