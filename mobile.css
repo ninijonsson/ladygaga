@@ -21,7 +21,7 @@
         width: 93vw;
         padding: 15px;
 
-        /* Gör om gridden för mobilversionen */
+        /* Gör om gridden för mobilversionen, vw istället */
         grid-template-rows: 0.04fr 0.01fr 0.15fr 0.03fr 0.4fr 0.3fr 0.15fr;
     }
 
@@ -29,11 +29,15 @@
         text-align: center;
     }
 
-    nav a {
-        font-size: 12px;
+    nav li {
+        font-size: 15px;
+        padding: 10px 5px;
+        border-radius: 5px;
+    }
+
+    ul a {
         border-radius: 10px;
-        padding: 15px 10px;
-        margin: 30px 0;
+        margin: 50px 0;
     }
 
     div h2 {
@@ -66,8 +70,12 @@
         grid-row: 2;
 
         font-size: 4.5vw;
-        padding: 25px;
+        padding: 20px 25px;
         margin-top: 3px;
+    }
+
+    .playlist h4 {
+        font-size: 24px;
     }
 
     .playlist li {
