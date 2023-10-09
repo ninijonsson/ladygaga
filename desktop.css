@@ -136,7 +136,7 @@ main .box {
 .box p,
 .box ol {
     grid-column: 1;
-    font-size: 1vw;
+    font-size: 17px;
 }
 
 .image {
@@ -360,7 +360,7 @@ footer {
 
     .box p,
     .box ol {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
@@ -383,36 +383,6 @@ footer {
 
     .box p,
     .box ol {
-        font-size: 12px;
-    }
-}
-
-/* Mobilversion */
-@media (max-width: 500px) {
-    body {
-        margin: 0;
-
-        background-image: url("images/mobile/background.png");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-
-        width: 500px;
-    }
-
-    .wrapper {
-        width: 94vw;
-    }
-
-    .wrapper .box {
-        width: 90vw;
-    }
-
-    header {
-        text-align: center;
-    }
-
-    nav li {
-        font-size: 12px;
+        font-size: 1.5vw;
     }
 }
