@@ -83,7 +83,7 @@ ul {
     padding-left: 0px;
 
     display: flex;
-    gap: var(--space);
+    gap: 8px;
 }
 
 ul a {
@@ -96,7 +96,7 @@ ul a {
     color: rgb(26, 26, 26);
 
     padding: var(--space);
-    border-radius: var(--border-radius);
+    border-radius: calc(0.8*var(--border-radius));
 
     /* Får knapparna att bli lika långa */
     flex-grow: 1;
@@ -126,11 +126,14 @@ main .box {
 }
 
 /* Boxarna med bilder, text o.s.v. */
-.box:nth-of-type(1),
-.box:nth-of-type(2) {
+.box {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.06fr 0.22fr 0.15fr;
+    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.18fr 0.12fr 0.15fr;
+}
+
+.box p {
+    padding: 5px;
 }
 
 .box p,
@@ -171,12 +174,16 @@ img:nth-of-type(2):hover {
 /* Underrubriker och text */
 div h2 {
     font-family: "bungee-outline";
-    font-size: 2.4vw;
+    font-size: 33px;
 }
 
 div h3 {
     font-family: "barlow-condensed";
-    font-size: 2vw;
+    font-size: 27px;
+}
+
+div h4 {
+    font-size: 22px;
 }
 
 div ol li {
@@ -222,7 +229,6 @@ div ol li {
    här finns texter + bild */
 .bottom_text {
     margin-top: var(--space);
-
     grid-row: 7;
     grid-column: 1 / span 3;
 
@@ -351,16 +357,20 @@ footer {
 
     /* Justera typsnittsstorlek */
     div h2 {
-        font-size: 21px;
+        font-size: 25px;
     }
 
     div h3 {
+        font-size: 20px;
+    }
+
+    div h4 {
         font-size: 16px;
     }
 
     .box p,
     .box ol {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -374,11 +384,15 @@ footer {
 
     /* Justera typsnittsstorlek */
     div h2 {
-        font-size: 2.4vw;
+        font-size: 2.7vw;
     }
 
     div h3 {
-        font-size: 2vw;
+        font-size: 2.2vw;
+    }
+
+    div h4 {
+        font-size: 1.8vw;
     }
 
     .box p,
