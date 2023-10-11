@@ -57,8 +57,7 @@ body {
 .wrapper {
     background-color: rgba(32, 32, 32, 0.6);
     border-radius: var(--border-radius);
-    width: 70vw;
-    /* Fast värde */
+    width: 996px;
     padding: var(--double_space);
 
     /* Längden på wrappern */
@@ -89,7 +88,7 @@ ul {
 
 ul a {
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     list-style: none;
     text-decoration: none;
 
@@ -130,7 +129,7 @@ main .box {
 .box {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.18fr 0.12fr;
+    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 165px 0.11fr 0.2fr;
 }
 
 .box p {
@@ -198,7 +197,7 @@ div ol li {
 
     border-radius: 0 0 0 var(--border-radius);
 
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1;
 
     margin: 0 5px 10px 5px;
@@ -235,7 +234,7 @@ div ol li {
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 0.9fr;
+    grid-template-rows: 1fr;
     gap: 5px;
 }
 
@@ -353,7 +352,7 @@ footer {
 @media (min-width: 800px) and (max-width: 900px) {
 
     .wrapper {
-        width: 93vw;
+        width: 747px;
     }
 
     /* Justera typsnittsstorlek */
@@ -371,7 +370,7 @@ footer {
 
     .box p,
     .box ol {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -380,7 +379,7 @@ footer {
 
     /* Wrappern bevarar sin storlek */
     .wrapper {
-        width: 840px;
+        width: 83vw;
     }
 
     /* Justera typsnittsstorlek */
@@ -398,6 +397,45 @@ footer {
 
     .box p,
     .box ol {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        padding: 37px;
+    }
+
+    ul {
+        margin: 35px 0;
+    }
+
+    ul a {
+        padding: 18px;
+    }
+
+    main .box {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    img {
+        margin-bottom: 8px;
+    }
+
+    .box .playlist {
+        padding: 20px;
+    }
+
+    .bottom_text {
+        margin-top: 19px;
+    }
+
+    .bottom_text p {
+        padding: 12px;
+    }
+
+    .playlist ol {
+        padding-left: 18px;
     }
 }
