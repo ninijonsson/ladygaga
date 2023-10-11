@@ -58,6 +58,7 @@ body {
     background-color: rgba(32, 32, 32, 0.6);
     border-radius: var(--border-radius);
     width: 70vw;
+    /* Fast värde */
     padding: var(--double_space);
 
     /* Längden på wrappern */
@@ -129,7 +130,7 @@ main .box {
 .box {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.18fr 0.12fr 0.15fr;
+    grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 0.18fr 0.12fr;
 }
 
 .box p {
@@ -197,7 +198,7 @@ div ol li {
 
     border-radius: 0 0 0 var(--border-radius);
 
-    grid-row: 6;
+    grid-row: 2;
     grid-column: 1;
 
     margin: 0 5px 10px 5px;
