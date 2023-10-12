@@ -372,6 +372,11 @@ footer {
     .box ol {
         font-size: 13px;
     }
+
+    /* Löser mitt problem */
+    .box {
+        grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 165px 50px 0.2fr;
+    }
 }
 
 /* Här ska typsnittet växa, mellan 900px och 1200px */
@@ -399,8 +404,14 @@ footer {
     .box ol {
         font-size: 1.4vw;
     }
+
+    /* Löser mitt problem */
+    .box {
+        grid-template-rows: 0.04fr 0.08fr 0.01fr 0.18fr 14vw 0.11fr 0.2fr;
+    }
 }
 
+/* Enklaste sättet att fixa mitt problem */
 @media (min-width: 1200px) {
     .wrapper {
         padding: 37px;
